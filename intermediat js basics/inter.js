@@ -1,16 +1,9 @@
-// let lis = document.querySelectorAll("li");
-// for (let i = 0; i < lis.length; i++){
+let sel  = document.querySelector("select");
+let selectionDevice = document.querySelector("#selDev");
 
-//     console.log(lis[i].textContent);
-// }
+sel.addEventListener("change", function(dets){
+   
+    selectionDevice.textContent = `${dets.target.value} Device Selected`;
+    // console.log(dets);
 
-// add a title to a div via js 
-
-// let a = document.querySelector("div");
-// a.setAttribute("title", "lorem ipsum")
-
-//how to change the font size via querry selector
-let font = document.querySelectorAll("p");
-font.forEach(function(elem){
-    elem.style.fontSize = "18px";
 })
