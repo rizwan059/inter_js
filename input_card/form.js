@@ -11,16 +11,16 @@ let profile = document.createElement("div");
 profile.classList.add("profile");
 
 let img = document.createElement("img");
-img.setAttribute = "src","https://images.unsplash.com/photo-1755429562521-cb944ea054ab?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDE5fHRvd0paRnNrcEdnfHxlbnwwfHx8fHw%3D"
+img.setAttribute("src", inputs[3].value);
 
 let h3 = document.createElement("h3");
-h3.textContent = "Rizwan Ali";
+h3.textContent = inputs[0].value;
 
 let h5 = document.createElement("h5");
-h5.textContent = "Struggling Developer";
+h5.textContent = inputs[1].value;
 
 let para = document.createElement("p");
-para.textContent = "sadfsadfsadfsafsafdsdfsadfsadfsaf";
+para.textContent = inputs[2].value;
 
 
 profile.appendChild(img);
@@ -32,4 +32,11 @@ card.appendChild(para);
 
 
 form.appendChild(card); 
+
+inputs.forEach(function(inp){
+    if(inp.type !== "submit"){
+
+        inp.value = "";
+    }
+})
 });
