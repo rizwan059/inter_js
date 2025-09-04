@@ -1,137 +1,34 @@
-
-  /* ---------- CSS Variables (default = light) ---------- */
-  :root {
-    --bg: #ffffff;
-    --text: #111111;
-    --muted: #6b7280;
-    --card: #f5f7fb;
-    --accent: #3b82f6;
-    --border: #e5e7eb;
-  }
-
-  /* Use system preference as starting point */
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #0b0f14;
-      --text: #e5e7eb;
-      --muted: #9ca3af;
-      --card: #111827;
-      --accent: #60a5fa;
-      --border: #1f2937;
+ *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+ }
+ 
+ 
+ #main {
+      width: 100vw;
+      height: 100vh;
+      display: flex;              
+      justify-content: center;     
+      align-items: center;         
+      flex-direction: column;      
+      background: #f4f4f4;         
     }
-  }
 
-  /* Page base */
-  * { box-sizing: border-box; }
-  html, body { height: 100%; }
-  body {
-    margin: 0;
-    font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
-    background: var(--bg);
-    color: var(--text);
-    transition: background .25s ease, color .25s ease;
-  }
+    /* Style for h1 */
+    h1 {
+      font-size: 3rem;
+      margin: 10px 0;
+      color: #222;
+    }
 
-  .app {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 24px;
-  }
-
-  header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
-    padding: 16px 0;
-    border-bottom: 1px solid var(--border);
-  }
-
-  h1 { margin: 0; font-size: 1.5rem; }
-  p.muted { color: var(--muted); margin: 8px 0 0; }
-
-  .card {
-    margin-top: 24px;
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 20px;
-    text-align: center;
-  }
-
-  a {
-    color: var(--accent);
-    text-decoration: none;
-  }
-  a:hover { text-decoration: underline; }
-
-  /* ---------- Toggle (checkbox hack) ---------- */
-  /* Hidden checkbox that controls a .manual-dark theme state */
-  #theme-toggle {
-    position: absolute;
-    inline-size: 1px;
-    block-size: 1px;
-    clip-path: inset(50%);
-    overflow: hidden;
-    white-space: nowrap;
-  
-  }
-
-  .toggle {
-    display: inline-flex;
-    align-items: center;
-    margin-top: 15px;
-    margin-left: 10px;
-    gap: 10px;
-    user-select: none;
-    cursor: pointer;
-    font-weight: 600;
-  }
-
-  .switch {
-    inline-size: 52px;
-    block-size: 28px;
-    border-radius: 999px;
-    border: 1px solid var(--border);
-    background: var(--card);
-    position: relative;
-    transition: background .25s ease, border-color .25s ease;
-  }
-
-  .thumb {
-    position: absolute;
-    inset-block-start: 3px;
-    inset-inline-start: 3px;
-    inline-size: 22px;
-    block-size: 22px;
-    border-radius: 999px;
-    background: var(--text);
-    transition: transform .25s ease, background .25s ease;
-  }
-
-  /* When checked, move the thumb (meaning: force dark) */
-  #theme-toggle:checked + label .thumb {
-    transform: translateX(24px);
-  }
-
-  /* ---------- Manual dark theme override ---------- */
-  /* We scope an alternate variable set when the checkbox is checked */
-  #theme-toggle:checked ~ .app {
-    --bg: #0b0f14;
-    --text: #e5e7eb;
-    --muted: #9ca3af;
-    --card: #111827;
-    --accent: #60a5fa;
-    --border: #1f2937;
-  }
-
-  /* Accessible icon text */
-  .sr-only {
-    position: absolute;
-    inline-size: 1px;
-    block-size: 1px;
-    clip: rect(0 0 0 0);
-    clip-path: inset(50%);
-    overflow: hidden;
-    white-space: nowrap;
-  }
+    /* Style for h6 */
+    button {
+      font-size: 1rem;
+      margin: 5px 0;
+    
+      font-weight: normal;
+      border: 2px solid grey;
+      border-radius: 10px;
+      padding: 10px;
+    }

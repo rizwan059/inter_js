@@ -9,31 +9,16 @@
 
 </head>
 
-<body class="dark">
-    <!-- Checkbox lives before .app so we can target it with sibling selector -->
-    <input type="checkbox" id="theme-toggle" aria-label="Toggle dark theme" />
-    <label class="toggle" for="theme-toggle" title="Switch theme">
-        <span class="switch" aria-hidden="true">
-            <span class="thumb"></span>
-        </span>
-        <span>Dark mode</span>
-        <span class="sr-only">Toggle between light and dark theme</span>
-    </label>
+<body class="Dark">
 
-    <main class="app" role="main">
-        <header>
-            <div>
-                <h1>Light / Dark Theme</h1>
+    <div id="main">
 
-            </div>
-        </header>
+        <h1>Dark / Light Theme</h1>
 
-        <section class="card">
-            <h2>Demo Card</h2>
-           <P>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error fugiat earum voluptatem.</P>
+        <button>Toggle Theme</button>
 
-        </section>
-    </main>
+    </div>
+
 </body>
-
+<script type="module" src="LTTheme.js"></script>
 </html>
