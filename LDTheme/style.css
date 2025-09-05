@@ -3,7 +3,14 @@
   padding: 0;
   box-sizing: border-box;
  }
- 
+ body.dark {
+    background: #111;
+    color: #fff;
+}
+body.light {
+    background: #fff;
+    color: #000;
+}
  
  #main {
       width: 100vw;
