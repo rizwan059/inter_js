@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Card with Search</title>
+<style>
+  :root{
+    --bg:#0b0b10; 
+    --panel:#141421;
+    --text:#e7e7ee;
+    --muted:#a7a7b3;
+    --ring:#3b82f6;
+    --radius:16px;
+  }
+
+  *{box-sizing:border-box}
+  body{
+    margin:0; 
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
+    background: radial-gradient(1200px 800px at 10% -10%, #1a1a2b 0%, #0d0d16 60%, #09090f 100%), var(--bg);
+    color:var(--text);
+    min-height:100svh;
+    display:flex;
+    align-items:flex-start;
+    justify-content:center;
+    padding:32px 16px;
+  }
+
+  .wrap{
+    width:min(100%, 1100px);
+  }
+
+  /* Search bar */
+  .searchbar{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    background:var(--panel);
+    border:1px solid #232336;
+    border-radius:999px;
+    padding:10px 14px;
+    box-shadow:0 4px 24px rgba(0,0,0,.25);
+  }
+  .searchbar input[type="search"]{
+    appearance:none;
+    border:none;
+    outline:none;
+    background:transparent;
+    color:var(--text);
+    width:100%;
+    font-size:16px;
+  }
+  .searchbar input::placeholder{color:var(--muted)}
+  .searchbar .btn{
+    border:none;
+    background:#1f2937;
+    color:var(--text);
+    padding:10px 14px;
+    border-radius:999px;
+    cursor:pointer;
+  }
+  .searchbar:focus-within{
+    outline:2px solid var(--ring);
+    outline-offset:2px;
+  }
+
+  
+  
+  .card{
+    position:relative;
+    isolation:isolate;
+    border-radius:var(--radius);
+    overflow:hidden;
+    min-height:280px;
+    background:#222; /* fallback */
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
+  }
+  .card::before{
+    content:"";
+    position:absolute; inset:0;
+    background-size:cover; background-position:center;
+    filter:brightness(.7) saturate(1.1);
+    z-index:-2;
+  }
+  /* individual images */
+  .card.bg-1::before{ background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop'); }
+ 
+
+  /* gradient overlay for readability */
+  .card::after{
+    content:"";
+    position:absolute; inset:0;
+    background:linear-gradient(to top, rgba(0,0,0,.65) 0%, rgba(0,0,0,.25) 50%, rgba(0,0,0,0) 100%);
+    z-index:-1;
+  }
+
+  .card-content{
+    position:absolute; inset:auto 0 0 0;
+    padding:16px;
+    display:flex; flex-direction:column; gap:8px;
+  }
+
+  .card h3{
+    margin:0;
+    font-size:20px; 
+    line-height:1.2;
+  }
+  .card p{
+    margin:0;
+    font-size:14px; 
+    color:#d6d6de;
+  }
+
+  
+ 
+
+ 
+
+  /* Make buttons tappable on mobile */
+  @media (hover:hover){
+    .searchbar .btn:hover{ filter:brightness(1.15) }
+  }
+</style>
+</head>
+<body>
+  <main class="wrap">
+    <!-- Search UI (visual only without JS) -->
+    <form class="searchbar" role="search" aria-label="Search cards" onsubmit="return false">
+      
+     
+      <button class="btn" type="submit">Search</button>
+    </form>
+   
+
+    <!-- Cards -->
+    <section class="grid" aria-label="Card results">
+      <article class="card bg-1">
+        <div class="card-content">
+          <h3>Explore</h3>
+          <p>Find serene trails and scenic viewpoints for your next weekend getaway.</p>
+          
+        </div>
+      </article>
+
+    </section>
+  </main>
+</body>
+</html>
